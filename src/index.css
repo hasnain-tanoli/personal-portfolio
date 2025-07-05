@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/assets/Integral/Fontspring-DEMO-integralcf-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/assets/Integral/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100; /* Default light theme, dark theme for dark mode */
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  position: relative; /* For pseudo-elements positioning */
+}
+
+body:not(.dark) {
+ --star-color: #333; /* Dark color for stars in light mode */
+}
+
+body.dark {
+ --star-color: white; /* White color for stars in dark mode */
+ background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+}
+
+/* Star background effect */
+.stars {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+ z-index: -1; /* Ensure stars are behind content */
+}
+
+.star {
+  position: absolute;
+  background: var(--star-color);
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 4s infinite ease-in-out alternate,
+             move 60s infinite linear;
+}
+
+@keyframes twinkle {
+ 0%, 100% { opacity: 0; }
+ 50% { opacity: 0.8; }
+}
+
+@keyframes move {
+ 0% { transform: translate(0, 0); }
+ 100% { transform: translate(var(--star-x-end), var(--star-y-end)); }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Integral CF', sans-serif;
+}
+
+/* Custom styles for Projects section */
+.project-title-glow {
+  text-shadow: 0 0 15px rgba(255, 165, 0, 0.4), 0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+.custom-asterisk {
+  filter: drop-shadow(0 0 8px rgba(255, 165, 0, 0.6));
+}
+
+.project-number-gradient {
+  background: linear-gradient(90deg, #FFA500, #FF6347, #FF00FF, #8A2BE2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.project-title-hover-effect {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-title-hover-effect::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #FFA500, #FF6347, #FF00FF, #8A2BE2);
+  transition: width 0.3s ease-in-out;
+}
+
+.project-title-hover-effect:hover::after {
+  width: 100%;
+}
+
+/* Vertical accent line/dots */
+.vertical-accent-line {
+  background: linear-gradient(to bottom, #FFA500, #FF6347, #FF00FF, #8A2BE2);
+}
+
+.vertical-accent-dot {
+  background: linear-gradient(90deg, #FFA500, #FF6347, #FF00FF, #8A2BE2);
+}
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #FFA500, #FF6347, #FF00FF, #8A2BE2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* Fallback for non-webkit browsers */
+}
+
+.nav-link {
+  @apply text-gray-700 dark:text-gray-300 font-medium hover:text-gray-900 dark:hover:text-white transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95;
+  background: linear-gradient(90deg, #FFA500, #FF6347, #FF00FF, #8A2BE2);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 border border-gray-300 dark:border-gray-600 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95;
+}
+
+.card {
+  @apply bg-white/80 dark:bg-gray-800/80 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/80 dark:border-gray-700/80;
+}
+
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+.container-custom {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-infinite {
+  animation: rotate360 10s linear infinite; /* Adjust duration as needed */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Selection styles */
+::selection {
+  @apply bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100;
+}
+
+/* Focus styles */
+*:focus {
+  @apply outline-none;
+}
+
+*:focus-visible {
+  @apply ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-gray-900;
+}
