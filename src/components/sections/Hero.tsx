@@ -105,6 +105,17 @@ const Hero: React.FC = () => {
 
       {/* Main Content */}
       <div className="relative min-h-screen flex flex-col justify-center items-center text-center z-20 p-6">
+        {/* Mobile-only Avatar */}
+        <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mb-6 md:hidden"
+        >
+            <div className="relative p-1 rounded-full overflow-hidden bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 w-fit rotate-infinite">
+                <img src="/assets/pfp.png" alt="Avatar" className="w-24 h-24 rounded-full block" />
+            </div>
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -164,10 +175,10 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="absolute bottom-8 left-8 md:bottom-8 md:right-8 md:left-auto flex items-center gap-3 z-20 cursor-pointer group"
+        className="absolute bottom-8 right-8 items-center gap-3 z-20 cursor-pointer group hidden md:flex"
       >
         <div className="relative p-1 rounded-full overflow-hidden bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 w-fit rotate-infinite">
-          <img src="/assets/pfp.png" alt="Avatar" className="w-10 h-10 md:w-12 md:h-12 rounded-full block group-hover:scale-110 transition-transform" />
+          <img src="/assets/pfp.png" alt="Avatar" className="w-12 h-12 rounded-full block group-hover:scale-110 transition-transform" />
         </div>
         {/* <span className="font-semibold">Play Intro</span> */}
       </motion.div>
