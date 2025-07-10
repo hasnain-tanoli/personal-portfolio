@@ -64,7 +64,7 @@ function App() {
             <div className="flex justify-center gap-6 mb-4">
               <a href="https://www.linkedin.com/in/hasnain-tanoli-794586286/" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><Linkedin size={24} /></a>
               <a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><Instagram size={24} /></a>
-              <a href="https://www.fiverr.com/s/vv6zD8N" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><BriefcaseBusiness size={24} /></a>
+              <a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><BriefcaseBusiness size={24} /></a>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-500">&copy; 2025 Hasnain Tanoli. Designed & built with passion.</p>
           </div>

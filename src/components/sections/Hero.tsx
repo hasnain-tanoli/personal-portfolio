@@ -153,7 +153,7 @@ const Hero: React.FC = () => {
         <div className="flex gap-4">
           <motion.a href="https://www.linkedin.com/in/hasnain-tanoli-794586286/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Linkedin size={16} /></motion.a>
           <motion.a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Instagram size={16} /></motion.a>
-          <motion.a href="https://www.fiverr.com/s/vv6zD8N" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><BriefcaseBusiness size={16} /></motion.a>
+          <motion.a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><BriefcaseBusiness size={16} /></motion.a>
         </div>
       </div>
 
