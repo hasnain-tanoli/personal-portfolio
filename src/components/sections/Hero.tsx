@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Instagram, Linkedin, BriefcaseBusiness } from 'lucide-react'; // Changed Facebook to Linkedin, Twitter to BriefcaseBusiness
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Hero: React.FC = () => {
+  const { theme } = useTheme();
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -39,16 +41,16 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative min-h-screen w-full overflow-hidden text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
 
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 p-6 md:p-8 z-30">
+      <header className="absolute top-0 left-0 right-0 p-2 md:p-4 z-30">
         <div className="container-custom mx-auto flex justify-between items-center">
           <motion.a
             href="#hero"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-lg font-bold font-poppins cursor-pointer"
+            className="cursor-pointer"
           >
-            Hasnain Tanoli
+            <img src={theme === 'light' ? '/assets/Logo-black.png' : '/assets/Logo.png'} alt="Logo" className="h-20" />
           </motion.a>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -155,6 +157,11 @@ const Hero: React.FC = () => {
           <motion.a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Instagram size={16} /></motion.a>
           <motion.a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><BriefcaseBusiness size={16} /></motion.a>
         </div>
+      </div>
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex md:hidden items-center justify-center gap-6 z-30">
+        <motion.a href="https://www.linkedin.com/in/hasnain-tanoli-794586286/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Linkedin size={20} /></motion.a>
+        <motion.a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Instagram size={20} /></motion.a>
+        <motion.a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><BriefcaseBusiness size={20} /></motion.a>
       </div>
 
       {/* Bottom Left Subtext for Desktop */}

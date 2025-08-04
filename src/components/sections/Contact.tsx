@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Check, Clipboard } from 'lucide-react';
 
 const Contact: React.FC = () => {
-  // Removed all state and form-related functions as they are no longer needed
+  const [copied, setCopied] = useState(false);
+  const email = 'contact.hasnaintanoli@gmail.com';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+  };
 
   return (
     <section
@@ -55,6 +63,18 @@ const Contact: React.FC = () => {
           <p className="text-base md:text-xl text-gray-600 dark:text-gray-400 mt-6 md:mt-8 text-center">
             I always reply!
           </p>
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={handleCopy}
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-green-500/80 px-6 py-2 font-bold text-green-500 transition-all duration-300 hover:border-green-600 hover:bg-green-600 hover:text-white dark:border-green-400/80 dark:text-green-400 dark:hover:bg-green-500 dark:hover:text-gray-900"
+            >
+              <span className="absolute inset-0 h-full w-0 bg-green-600 transition-all duration-300 ease-out group-hover:w-full dark:bg-green-500"></span>
+              <span className="relative flex items-center gap-2">
+                {copied ? <Check size={16} /> : <Clipboard size={16} />}
+                {copied ? 'Copied!' : 'Copy Email'}
+              </span>
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>

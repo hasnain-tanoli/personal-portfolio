@@ -1,8 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Code, GitBranch, Server, PenTool } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
+import Skills from './Skills'; // Adjust the import path as necessary
 
 const experienceData = [
+  {
+    title: 'AI/ML and Web Dev Intern',
+    company: 'Revnix',
+    date: 'August 2025 - Present',
+    description: 'Working on various projects involving AI, Machine Learning, and Web Development.',
+    link: 'https://revnix.com/',
+  },
   {
     title: 'Freelance Web Developer',
     company: 'Self-Employed',
@@ -10,22 +18,6 @@ const experienceData = [
     description: 'Designed and developed custom websites for clients, focusing on clean design and performance.',
   },
 ];
-
-const skillsData = {
-  Frontend: [
-    { name: 'React', icon: <Code size={20} /> },
-    { name: 'Next.js', icon: <Code size={20} /> },
-    { name: 'Tailwind CSS', icon: <PenTool size={20} /> },
-  ],
-  Backend: [
-    { name: 'Node.js', icon: <Server size={20} /> },
-    { name: 'Firebase', icon: <Server size={20} /> },
-  ],
-  'Dev Tools': [
-    { name: 'Git', icon: <GitBranch size={20} /> },
-    { name: 'Github', icon: <GitBranch size={20} /> },
-  ],
-};
 
 const Experience: React.FC = () => {
   return (
@@ -40,11 +32,8 @@ const Experience: React.FC = () => {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 md:mb-8 font-heading tracking-tight text-gray-800 dark:text-gray-50 project-title-glow">My Journey</h2>
-          <p className="text-sm text-gray-600 max-w-3xl mx-auto dark:text-gray-400 px-4 md:hidden">
-            I don’t have professional experience just yet — but I’m eager to grow, collaborate, and make a meaningful impact.
-          </p>
-          <p className="hidden md:block text-lg text-gray-600 max-w-3xl mx-auto dark:text-gray-400 px-4 md:px-0">
-            I don’t have professional experience just yet — but I’m eager to grow, collaborate, and make a meaningful impact.
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto dark:text-gray-400 px-4 md:px-0">
+            I'm at the beginning of my professional journey, passionate about learning, working with others, and delivering real value through my work.
           </p>
         </motion.div>
 
@@ -64,38 +53,37 @@ const Experience: React.FC = () => {
                   <span className="absolute flex items-center justify-center w-6 h-6 bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 rounded-full -left-3 ring-8 ring-white dark:ring-gray-950 dark:ring-black">
                     <Briefcase size={14} className="text-white" />
                   </span>
-                  <h4 className="flex items-center mb-1 text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-50">
+                  <h4 className="flex items-center mb-1 text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-50 font-sans font-bold">
                     {item.title}
+                    {item.company && (
+                      <span className="ml-2 text-base font-medium text-gray-600 dark:text-gray-400">
+                        at
+                        {item.link ? (
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-1 text-blue-500 hover:underline"
+                          >
+                            {item.company}
+                          </a>
+                        ) : (
+                          <span className="ml-1">{item.company}</span>
+                        )}
+                      </span>
+                    )}
                   </h4>
-                  <time className="block mb-2 text-xs md:text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
+                  <time className="block mb-2 text-xs md:text-sm font-normal leading-none text-gray-500 dark:text-gray-400 font-sans font-bold">
                     {item.date}
                   </time>
-                  <p className="text-base font-normal text-gray-600 dark:text-gray-400">
+                  <p className="text-base font-normal text-gray-600 dark:text-gray-400 font-sans font-bold">
                     {item.description}
                   </p>
                 </motion.div>
               ))}
             </div>
           </div>
-
-          <div className="bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200 dark:bg-gray-900/20 dark:border-gray-800/50">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 font-heading text-gray-800 dark:text-gray-50">What I Know</h3>
-            <div className="space-y-6 md:space-y-8">
-              {Object.entries(skillsData).map(([category, skills]) => (
-                <div key={category}>
-                  <h4 className="text-lg md:text-xl font-semibold mb-4 text-gray-800 dark:text-gray-50">{category}</h4>
-                  <div className="flex flex-wrap gap-2 md:gap-3">
-                    {skills.map(skill => (
-                      <div key={skill.name} className="flex items-center gap-2 bg-gray-200 text-gray-800 border border-gray-300 px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 hover:bg-gray-300 hover:border-gray-400 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:border-gray-600">
-                        {React.cloneElement(skill.icon, { size: 14, className: 'text-green-600 dark:text-green-400' })}
-                        <span>{skill.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Skills />
         </div>
       </div>
     </section>

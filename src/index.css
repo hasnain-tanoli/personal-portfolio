@@ -213,3 +213,9 @@ h6 {
 *:focus-visible {
   @apply ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-gray-900;
 }
+
+@media (max-width: 768px) {
+  .stars {
+    display: none;
+  }
+}
