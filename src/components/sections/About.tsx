@@ -25,7 +25,7 @@ const About: React.FC = () => {
           >
             <div className="relative p-2 rounded-full overflow-hidden bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 mx-auto w-fit">
               <img
-                src="/assets/pfp.png"
+                src="/assets/new-pfp.jpg"
                 alt="Portrait"
                 className="rounded-full shadow-lg transition-all duration-300 hover:scale-105 block"
               />
