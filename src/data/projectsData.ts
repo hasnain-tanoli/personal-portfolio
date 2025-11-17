@@ -58,5 +58,13 @@ export const allProjects: Project[] = [
     technologies: ['React.js', 'Tailwind', 'Node.js', 'Redux', 'Appwrite', 'TinyMCE', 'React Hook Forms'],
     image: '/assets/scroll.png',
     link: 'https://scroll-phi-two.vercel.app/',
+  },
+  {
+    id: 5,
+    title: 'Sentra',
+    description: 'Sentra RBAC CMS is a cutting-edge content management system built with Next.js 16, designed to provide security through its sophisticated Role-Based Access Control (RBAC) system. Perfect for teams that need granular control over content and user permissions.',
+    technologies: ['Next.js', 'Next-Auth', 'Tailwind', 'MongoDB', 'Tailwind CSS', 'Shadcn UI', 'TipTap Editor'],
+    image: '/assets/sentra.png',
+    link: 'https://sentra-rbac-cms.vercel.app/',
   }
 ]
