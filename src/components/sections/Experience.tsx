@@ -5,17 +5,11 @@ import Skills from './Skills'; // Adjust the import path as necessary
 
 const experienceData = [
   {
-    title: 'AI/ML and Web Dev Intern',
+    title: 'Web Development Intern',
     company: 'Revnix',
-    date: 'August 2025 - Present',
-    description: 'Working on various projects involving AI, Machine Learning, and Web Development.',
+    date: 'Aug 01, 2025 – Present',
+    description: 'Worked on multiple full-stack, production-ready applications with a strong focus on backend development. Designed and implemented scalable APIs, database schemas, and server-side logic using modern backend frameworks. Built end-to-end features, handling everything from database modeling to frontend integration. Collaborated with the team on code reviews, debugging, and improving overall application performance and reliability.',
     link: 'https://revnix.com/',
-  },
-  {
-    title: 'Freelance Web Developer',
-    company: 'Self-Employed',
-    date: '2023 - Present',
-    description: 'Designed and developed custom websites for clients, focusing on clean design and performance.',
   },
 ];
 

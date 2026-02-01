@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Instagram, Linkedin, BriefcaseBusiness } from 'lucide-react'; // Changed Facebook to Linkedin, Twitter to BriefcaseBusiness
+import { ArrowDown, Instagram, Linkedin, BriefcaseBusiness, Github } from 'lucide-react'; // Changed Facebook to Linkedin, Twitter to BriefcaseBusiness
 import { useTheme } from '../../contexts/ThemeContext';
 
 const Hero: React.FC = () => {
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer">
-                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
         >
           <button onClick={() => setIsMenuOpen(false)} className="absolute top-6 right-6 focus:outline-none">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer text-white">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <nav className="flex flex-col items-center gap-8">
@@ -109,14 +109,14 @@ const Hero: React.FC = () => {
       <div className="relative min-h-screen flex flex-col justify-center items-center text-center z-20 p-6">
         {/* Mobile-only Avatar */}
         <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-6 md:hidden"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mb-6 md:hidden"
         >
-            <div className="relative p-1 rounded-full overflow-hidden bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 w-fit rotate-infinite">
-                <img src="/assets/pfp.png" alt="Avatar" className="w-24 h-24 rounded-full block" />
-            </div>
+          <div className="relative p-1 rounded-full overflow-hidden bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 w-fit rotate-infinite">
+            <img src="/assets/profile-latest.jpg" alt="Avatar" className="w-24 h-24 rounded-full block" />
+          </div>
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -153,12 +153,14 @@ const Hero: React.FC = () => {
       <div className="absolute right-6 md:right-8 top-1/2 -translate-y-1/2 items-center gap-2 z-30 hidden md:flex" style={{ writingMode: 'vertical-rl' }}>
         <span className="text-sm">Follow Us –</span>
         <div className="flex gap-4">
+          <motion.a href="https://github.com/hasnain-tanoli" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Github size={16} /></motion.a>
           <motion.a href="https://www.linkedin.com/in/hasnain-tanoli-794586286/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Linkedin size={16} /></motion.a>
           <motion.a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Instagram size={16} /></motion.a>
           <motion.a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><BriefcaseBusiness size={16} /></motion.a>
         </div>
       </div>
       <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex md:hidden items-center justify-center gap-6 z-30">
+        <motion.a href="https://github.com/hasnain-tanoli" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Github size={20} /></motion.a>
         <motion.a href="https://www.linkedin.com/in/hasnain-tanoli-794586286/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Linkedin size={20} /></motion.a>
         <motion.a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><Instagram size={20} /></motion.a>
         <motion.a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.2 }}><BriefcaseBusiness size={20} /></motion.a>
@@ -185,7 +187,7 @@ const Hero: React.FC = () => {
         className="absolute bottom-8 right-8 items-center gap-3 z-20 cursor-pointer group hidden md:flex"
       >
         <div className="relative p-1 rounded-full overflow-hidden bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 w-fit rotate-infinite">
-          <img src="/assets/pfp.png" alt="Avatar" className="w-12 h-12 rounded-full block group-hover:scale-110 transition-transform" />
+          <img src="/assets/profile-latest.jpg" alt="Avatar" className="w-12 h-12 rounded-full block group-hover:scale-110 transition-transform" />
         </div>
         {/* <span className="font-semibold">Play Intro</span> */}
       </motion.div>

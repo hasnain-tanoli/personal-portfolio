@@ -5,6 +5,7 @@ export interface Project {
   technologies: string[];
   image: string;
   link?: string;
+  githubLink?: string;
 }
 
 export const featuredProjects: Project[] = [
@@ -15,6 +16,7 @@ export const featuredProjects: Project[] = [
     technologies: ['React', 'Tailwind', 'Node.js', 'daisyUI', 'Zustand', 'Stream', 'bcryptJS', 'MongoDB'],
     image: '/assets/connectp.png',
     link: 'https://connect-p-px4qr.sevalla.app/',
+    githubLink: 'https://github.com/hasnain-tanoli/connect-p',
   },
   {
     id: 2,
@@ -23,6 +25,8 @@ export const featuredProjects: Project[] = [
     technologies: ['React.js', 'Tailwind', 'Node.js', 'Google Gemini'],
     image: '/assets/paceai.png',
     link: 'https://pace-ai-brown.vercel.app/',
+    githubLink: 'https://github.com/hasnain-tanoli/pace-ai',
+
   },
 ];
 
@@ -34,6 +38,7 @@ export const allProjects: Project[] = [
     technologies: ['React', 'Tailwind', 'Node.js', 'daisyUI', 'Zustand', 'Stream', 'bcryptJS', 'MongoDB'],
     image: '/assets/connectp.png',
     link: 'https://connect-p-px4qr.sevalla.app/',
+    githubLink: 'https://github.com/hasnain-tanoli/connect-p',
   },
   {
     id: 2,
@@ -42,6 +47,7 @@ export const allProjects: Project[] = [
     technologies: ['React.js', 'Tailwind', 'Node.js', 'Google Gemini'],
     image: '/assets/paceai.png',
     link: 'https://pace-ai-brown.vercel.app/',
+    githubLink: 'https://github.com/hasnain-tanoli/pace-ai',
   },
   {
     id: 3,
@@ -50,6 +56,7 @@ export const allProjects: Project[] = [
     technologies: ['React.js', 'Tailwind', 'Node.js', 'Spotdl'],
     image: '/assets/musicdl.png',
     link: 'https://github.com/hasnain-tanoli/music-dl.git',
+    githubLink: 'https://github.com/hasnain-tanoli/music-dl.git',
   },
   {
     id: 4,
@@ -58,6 +65,7 @@ export const allProjects: Project[] = [
     technologies: ['React.js', 'Tailwind', 'Node.js', 'Redux', 'Appwrite', 'TinyMCE', 'React Hook Forms'],
     image: '/assets/scroll.png',
     link: 'https://scroll-phi-two.vercel.app/',
+    githubLink: 'https://github.com/hasnain-tanoli/scroll.git',
   },
   {
     id: 5,
@@ -66,5 +74,6 @@ export const allProjects: Project[] = [
     technologies: ['Next.js', 'Next-Auth', 'Tailwind', 'MongoDB', 'Tailwind CSS', 'Shadcn UI', 'TipTap Editor'],
     image: '/assets/sentra.png',
     link: 'https://sentra-rbac-cms.vercel.app/',
+    githubLink: 'https://github.com/hasnain-tanoli/sentra-rbac-cms.git',
   }
 ]

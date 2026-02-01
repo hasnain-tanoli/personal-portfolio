@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Asterisk } from 'lucide-react';
+import { Asterisk, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { featuredProjects as projectsData } from '../../data/projectsData';
 
@@ -140,6 +140,19 @@ const Projects: React.FC = () => {
                   </p>
                 </div>
               </div>
+
+              {/* GitHub Link Icon - Absolutely Positioned */}
+              {project.githubLink && (
+                <motion.a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4 md:top-6 md:right-6 text-gray-400 hover:text-green-500 transition-all duration-300 hover:scale-110 z-10"
+                  whileHover={{ rotate: 15 }}
+                >
+                  <Github className="w-5 h-5 md:w-8 md:h-8" />
+                </motion.a>
+              )}
             </motion.div>
           ))}
         </div>

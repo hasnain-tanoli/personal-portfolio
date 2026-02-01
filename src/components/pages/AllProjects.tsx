@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import ThemeToggle from '../ThemeToggle';
-import { Instagram, Linkedin, BriefcaseBusiness } from 'lucide-react';
+import { Instagram, Linkedin, BriefcaseBusiness, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { allProjects as projectsData } from '../../data/projectsData';
@@ -17,7 +17,7 @@ const Stars = () => {
       for (let i = 0; i < numStars; i++) {
         const star = document.createElement('div');
         star.className = 'star';
-        
+
         // Random size for stars
         const size = Math.random() * 2 + 0.5; // Between 0.5px and 2.5px
         star.style.width = `${size}px`;
@@ -98,35 +98,35 @@ const AllProjects: React.FC = () => {
   }, [hoveredImage]);
 
   return (
-      <div className="min-h-screen font-sans">
-        <Stars />
-        <ThemeToggle />
-        <header className="absolute top-0 left-0 right-0 p-2 md:p-4 z-30">
-            <div className="container-custom mx-auto flex justify-between items-center">
-                <Link to="/" className="cursor-pointer">
-                    <img src={theme === 'light' ? '/assets/Logo-black.png' : '/assets/Logo.png'} alt="Logo" className="h-20" />
-                </Link>
-                <nav className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                    <Link
-                        key={link.id}
-                        to={link.id}
-                        className={`nav-link ${location.pathname === link.id ? 'text-green-500 dark:text-green-400 font-bold' : ''}`}
-                    >
-                        {link.name}
-                    </Link>
-                    ))}
-                </nav>
-                <div className="md:hidden">
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none text-gray-800 dark:text-gray-200">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer">
-                        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    </button>
-                </div>
-            </div>
-        </header>
-        {isMenuOpen && (
+    <div className="min-h-screen font-sans">
+      <Stars />
+      <ThemeToggle />
+      <header className="absolute top-0 left-0 right-0 p-2 md:p-4 z-30">
+        <div className="container-custom mx-auto flex justify-between items-center">
+          <Link to="/" className="cursor-pointer">
+            <img src={theme === 'light' ? '/assets/Logo-black.png' : '/assets/Logo.png'} alt="Logo" className="h-20" />
+          </Link>
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.id}
+                to={link.id}
+                className={`nav-link ${location.pathname === link.id ? 'text-green-500 dark:text-green-400 font-bold' : ''}`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+          <div className="md:hidden">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none text-gray-800 dark:text-gray-200">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      {isMenuOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -135,7 +135,7 @@ const AllProjects: React.FC = () => {
         >
           <button onClick={() => setIsMenuOpen(false)} className="absolute top-6 right-6 focus:outline-none">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer text-white">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <nav className="flex flex-col items-center gap-8">
@@ -152,9 +152,9 @@ const AllProjects: React.FC = () => {
           </nav>
         </motion.div>
       )}
-        <main className="container-custom mx-auto py-32">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 tracking-wide text-gray-800 dark:text-gray-200">All My Work</h1>
-          <div className="max-w-4xl mx-auto">
+      <main className="container-custom mx-auto py-32">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 tracking-wide text-gray-800 dark:text-gray-200">All My Work</h1>
+        <div className="max-w-4xl mx-auto">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
@@ -227,32 +227,46 @@ const AllProjects: React.FC = () => {
                   </p>
                 </div>
               </div>
+
+              {/* GitHub Link Icon - Absolutely Positioned */}
+              {project.githubLink && (
+                <motion.a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4 md:top-6 md:right-6 text-gray-400 hover:text-green-500 transition-all duration-300 hover:scale-110 z-10"
+                  whileHover={{ rotate: 15 }}
+                >
+                  <Github className="w-5 h-5 md:w-8 md:h-8" />
+                </motion.a>
+              )}
             </motion.div>
           ))}
         </div>
         <div className="text-center mt-16">
-            <Link
-                to="/"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-green-500/80 px-8 py-3 font-bold text-green-500 transition-all duration-300 hover:border-green-600 hover:bg-green-600 hover:text-white dark:border-green-400/80 dark:text-green-400 dark:hover:bg-green-500 dark:hover:text-gray-900"
-              >
-                <span className="absolute inset-0 h-full w-0 bg-green-600 transition-all duration-300 ease-out group-hover:w-full dark:bg-green-500"></span>
-                <span className="relative flex items-center gap-2">
-                  Back to Home
-                </span>
-              </Link>
+          <Link
+            to="/"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-green-500/80 px-8 py-3 font-bold text-green-500 transition-all duration-300 hover:border-green-600 hover:bg-green-600 hover:text-white dark:border-green-400/80 dark:text-green-400 dark:hover:bg-green-500 dark:hover:text-gray-900"
+          >
+            <span className="absolute inset-0 h-full w-0 bg-green-600 transition-all duration-300 ease-out group-hover:w-full dark:bg-green-500"></span>
+            <span className="relative flex items-center gap-2">
+              Back to Home
+            </span>
+          </Link>
         </div>
-        </main>
-        <footer>
-          <div className="container-custom py-4 text-center text-gray-600 dark:text-gray-400">
-            <div className="flex justify-center gap-6 mb-4">
-              <a href="https://www.linkedin.com/in/hasnain-tanoli-794586286/" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><Linkedin size={24} /></a>
-              <a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><Instagram size={24} /></a>
-              <a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><BriefcaseBusiness size={24} /></a>
-            </div>
-            <p className="text-sm text-gray-500 dark:text-gray-500">&copy; 2025 Hasnain Tanoli. Designed & built with passion.</p>
+      </main>
+      <footer>
+        <div className="container-custom py-4 text-center text-gray-600 dark:text-gray-400">
+          <div className="flex justify-center gap-6 mb-4">
+            <a href="https://github.com/hasnain-tanoli" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><Github size={24} /></a>
+            <a href="https://www.linkedin.com/in/hasnain-tanoli-794586286/" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><Linkedin size={24} /></a>
+            <a href="https://www.instagram.com/_am.hasnaintanoli?igsh=MXYxeXhjbHN1Mm44OQ==" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><Instagram size={24} /></a>
+            <a href="https://www.fiverr.com/hasnain_tanoli_" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300"><BriefcaseBusiness size={24} /></a>
           </div>
-        </footer>
-        <AnimatePresence>
+          <p className="text-sm text-gray-500 dark:text-gray-500">&copy; 2025 Hasnain Tanoli. Designed & built with passion.</p>
+        </div>
+      </footer>
+      <AnimatePresence>
         {hoveredImage && (
           <motion.div
             ref={imageRef}
@@ -283,7 +297,7 @@ const AllProjects: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      </div>
+    </div>
   );
 };
 
