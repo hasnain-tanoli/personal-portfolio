@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
           className="max-w-full md:max-w-xs text-center mt-6 block md:hidden"
         >
           <p className="text-base text-gray-600 dark:text-gray-400 mb-2">
-            I transform thorny problems into elegant solutions using visual design, rapid prototyping, and interaction skills.
+            I build robust, scalable, and efficient backend systems, focusing on performance, security, and seamless API integration.
           </p>
           <a href="#about" className="font-semibold hover:underline">Know more →</a>
         </motion.div>
@@ -174,7 +174,7 @@ const Hero: React.FC = () => {
         className="absolute bottom-8 left-8 max-w-xs text-left z-20 hidden md:block"
       >
         <p className="text-base text-gray-600 dark:text-gray-400 mb-2">
-          I transform thorny problems into elegant solutions using visual design, rapid prototyping, and interaction skills.
+          I build robust, scalable, and efficient backend systems, focusing on performance, security, and seamless API integration.
         </p>
         <a href="#about" className="font-semibold hover:underline">Know more →</a>
       </motion.div>

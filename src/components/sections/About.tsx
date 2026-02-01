@@ -39,10 +39,10 @@ const About: React.FC = () => {
             className="lg:col-span-2 text-center lg:text-left"
           >
             <p className="text-base md:text-lg text-gray-600 mb-4 leading-relaxed dark:text-gray-300 px-4 md:px-0">
-              I'm a passionate developer who loves building beautiful and functional web applications. I'm driven by a desire to solve complex problems and create elegant solutions that people love.
+              I'm a dedicated developer with a strong focus on backend architecture and scalable web applications. I'm passionate about building robust systems and efficient APIs that power seamless user experiences.
             </p>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed dark:text-gray-300 px-4 md:px-0">
-              When I'm not coding, you can find me exploring new technologies, sipping on a cup of tea, or sketching out new ideas. I'm a firm believer in lifelong learning and am always looking for new ways to grow and improve.
+              When I'm not architecting backends, you can find me exploring new technologies, optimizing database queries, or sketching out system designs. I'm a firm believer in high-performance computing and secure, scalable code.
             </p>
             <motion.a
               href="/assets/Resume.pdf"
