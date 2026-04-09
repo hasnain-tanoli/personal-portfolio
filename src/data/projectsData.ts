@@ -24,7 +24,7 @@ export const featuredProjects: Project[] = [
     description: 'An AI-powered tutoring application that provides personalized learning experiences and adaptive content based on user progress.',
     technologies: ['React.js', 'Tailwind', 'Node.js', 'Google Gemini'],
     image: '/assets/paceai.png',
-    link: 'https://pace-ai-brown.vercel.app/',
+    link: 'https://pace-ai-chi.vercel.app/',
     githubLink: 'https://github.com/hasnain-tanoli/pace-ai',
 
   },
@@ -46,7 +46,7 @@ export const allProjects: Project[] = [
     description: 'An AI-powered tutoring application that provides personalized learning experiences and adaptive content based on user progress.',
     technologies: ['React.js', 'Tailwind', 'Node.js', 'Google Gemini'],
     image: '/assets/paceai.png',
-    link: 'https://pace-ai-brown.vercel.app/',
+    link: 'https://pace-ai-chi.vercel.app/',
     githubLink: 'https://github.com/hasnain-tanoli/pace-ai',
   },
   {
